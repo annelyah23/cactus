@@ -22,13 +22,13 @@ echo -e " [ ${green}INFO${NC} ] Installing SSH Slow DNS "
 echo "Progress..." | lolcat
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading files... "
-wget -qc https://raw.githubusercontent.com/NiLphreakzz/Syna/main/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
+wget -qc https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
 nameserver=$(cat /home/nsdomain)
 echo -e "[ ${green}INFO${NC} ] Download File... "
 echo "Progress..." | lolcat
 # SSH SlowDNS
 echo -e " [ ${green}INFO${NC} ] Successfully.. "
-wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/NiLphreakzz/Syna/main/slowdnss/sshd_config
+wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sshd_config
 systemctl restart sshd
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Tambahan... "
@@ -72,16 +72,16 @@ cd /root
 rm -rf slowdns
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading files... "
-wget -qc -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/NiLphreakzz/Syna/main/slowdnss/sldns-server"
-wget -qc -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/NiLphreakzz/Syna/main/slowdnss/sldns-client"
+wget -qc -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sldns-server"
+wget -qc -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sldns-client"
 sleep 1
 chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
 cd
 echo -e "[ ${green}INFO${NC} ] Successfully... "
 sleep 1
-#wget -q -O /etc/systemd/system/client-sldns.service "https://raw.githubusercontent.com/NiLphreakzz/Syna/main/slowdnss/client-sldns.service"
-#wget -q -O /etc/systemd/system/server-sldns.service "https://raw.githubusercontent.com/NiLphreakzz/Syna/main/slowdnss/server-sldns.service"
+#wget -q -O /etc/systemd/system/client-sldns.service "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/client-sldns.service"
+#wget -q -O /etc/systemd/system/server-sldns.service "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/server-sldns.service"
 cd
 sleep 1
 echo -e "[ ${green}INFO${NC} ] System Prosess... "
