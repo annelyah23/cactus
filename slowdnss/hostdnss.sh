@@ -8,8 +8,8 @@ rm nsdomain
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 subsl=$(</dev/urandom tr -dc a-x0-9 | head -c5)
 DOMAIN=sedang.my.id
-SUB_DOMAIN=vpn-${sub}.okna.gago
-NS_DOMAIN=ns-${subsl}.okna.gago
+SUB_DOMAIN=vpn-${sub}.bt-group.tk
+NS_DOMAIN=ns-${subsl}.bt-group.tk
 CF_ID=sshsedang@gmail.com
 CF_KEY=eaeddbd9e3cf97d4b889bd7fbae56b60bba63
 
