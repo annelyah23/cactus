@@ -2,7 +2,7 @@
 
 ```html
 wget https://raw.githubusercontent.com/annelyah23/VPS-access-root/main/root7.sh && bash root7.sh
-<br>
+ ```
 # Update 
   ```html
 apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
