@@ -47,6 +47,7 @@ export GOROOT=/usr/local/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 cd /root
 apt install git -y
+cd
 sleep 1
 mkdir -m 777 /etc/slowdns
 wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/server.key"
@@ -58,7 +59,6 @@ chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub
 chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
-cd
 echo -e "[ ${green}INFO${NC} ] Successfully... "
 sleep 1
 #wget -q -O /etc/systemd/system/client-sldns.service "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/client-sldns.service"
