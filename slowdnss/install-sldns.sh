@@ -48,28 +48,9 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 cd /root
 apt install git -y
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Downloading files... "
-git clone https://www.bamsoftware.com/git/dnstt.git jrtunnel
-mv /root/jrtunnel /root/slowdns
-rm -rf jrtunnel
-cd /root/slowdns/dnstt-server
-go build
-echo -e "[ ${green}INFO${NC} ] Install Key... "
-sleep 1
-./dnstt-server -gen-key -privkey-file /root/slowdns/dnstt-server/server.key -pubkey-file /root/slowdns/dnstt-server/server.pub
-echo -e "[ ${green}INFO${NC} ] Successfully... "
 mkdir -m 777 /etc/slowdns
-sleep 1
-echo -e "[ ${green}INFO${NC} ] Waiting... "
-mv /root/slowdns/dnstt-server/server.key /etc/slowdns/server.key
-mv /root/slowdns/dnstt-server/server.pub /etc/slowdns/server.pub
-rm -rf /root/slowdns
-echo -e "[ ${green}INFO${NC} ] Successfully... "
-sleep 1
-cd /root
-rm -rf slowdns
-sleep 1
-echo -e "[ ${green}INFO${NC} ] Downloading files... "
+wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdns/server.key"
+wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdns/server.pub"
 wget -qc -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sldns-server"
 wget -qc -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sldns-client"
 sleep 1
