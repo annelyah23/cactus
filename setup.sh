@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/annelyah23/IP-Register/main/ipmini > /root/tmp
+    curl -sS https://raw.githubusercontent.com/annelyah23/IP/main/ipmini > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -20,9 +20,9 @@ BURIQ () {
     done
     rm -f  /root/tmp
 }
-# https://raw.githubusercontent.com/annelyah23/IP-Register/main/ipmini 
+# https://raw.githubusercontent.com/annelyah23/IP/main/ipmini 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/annelyah23/IP-Register/main/ipmini | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/annelyah23/IP/main/ipmini | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -33,17 +33,17 @@ CekTwo=$(cat /etc/.$Name.ini)
         res="Expired"
     fi
 else
-res="IP-Register Accepted..."
+res="IP Accepted..."
 fi
 }
 
-IP-Register () {
+IP () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/annelyah23/IP-Register/main/ipmini | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/annelyah23/IP/main/ipmini | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
-    res="IP-Register Denied!"
+    res="IP Denied!"
     fi
     BURIQ
 }
@@ -157,16 +157,16 @@ echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 apt install git curl -y >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] Allright good ... installation file is ready"
 sleep 2
-echo -ne "[ ${green}INFO${NC} ] Check IP-Register : "
+echo -ne "[ ${green}INFO${NC} ] Check IP : "
 
-IP-Register
+IP
 if [ -f /home/needupdate ]; then
 red "Your script need to update first !"
 exit 0
-elif [ "$res" = "IP-Register Accepted..." ]; then
-green "IP-Register Accepted!"
+elif [ "$res" = "IP Accepted..." ]; then
+green "IP Accepted!"
 else
-red "IP-Register Denied!"
+red "IP Denied!"
 rm setup.sh > /dev/null 2>&1
 sleep 10
 exit 0
