@@ -23,12 +23,12 @@ echo "Progress..." | lolcat
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading files... "
 wget -qc https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
-nameserver=$(cat /home/nsdomain)
+nameserver=$(cat /root/nsdomain)
 echo -e "[ ${green}INFO${NC} ] Download File... "
 echo "Progress..." | lolcat
 # SSH SlowDNS
 echo -e " [ ${green}INFO${NC} ] Successfully.. "
-wget -qO- -O /etc/ssh/sshd_config https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sshd_config
+wget -q -O /etc/ssh/sshd_config https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sshd_config
 systemctl restart sshd
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Tambahan... "
@@ -58,14 +58,12 @@ echo -e "[ ${green}INFO${NC} ] Install Key... "
 sleep 1
 ./dnstt-server -gen-key -privkey-file /root/slowdns/dnstt-server/server.key -pubkey-file /root/slowdns/dnstt-server/server.pub
 echo -e "[ ${green}INFO${NC} ] Successfully... "
-sleep 1
-mkdir -m 777 /root/.dns
-sleep 2
-echo -e "[ ${green}INFO${NC} ] Waiting... "
-mv /root/slowdns/dnstt-server/server.key /root/.dns/server.key
-mv /root/slowdns/dnstt-server/server.pub /root/.dns/server.pub
-rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
+sleep 1
+echo -e "[ ${green}INFO${NC} ] Waiting... "
+mv /root/slowdns/dnstt-server/server.key /etc/slowdns/server.key
+mv /root/slowdns/dnstt-server/server.pub /etc/slowdns/server.pub
+rm -rf /root/slowdns
 echo -e "[ ${green}INFO${NC} ] Successfully... "
 sleep 1
 cd /root
@@ -75,6 +73,8 @@ echo -e "[ ${green}INFO${NC} ] Downloading files... "
 wget -qc -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sldns-server"
 wget -qc -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/sldns-client"
 sleep 1
+chmod +x /etc/slowdns/server.key
+chmod +x /etc/slowdns/server.pub
 chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
 cd
