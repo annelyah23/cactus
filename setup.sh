@@ -206,6 +206,8 @@ echo "$pp" > /root/domain
 echo "$pp" > /root/scdomain
 echo "$pp" > /etc/xray/domain
 echo "$pp" > /etc/xray/scdomain
+echo "$pp" > /root/nsdomain
+echo "$pp" > /root/subdomain
 echo "IP=$pp" > /var/lib/ssnvpn-pro/ipvps.conf
 
 #THEME RED
