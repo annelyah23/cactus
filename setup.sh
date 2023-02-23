@@ -33,17 +33,17 @@ CekTwo=$(cat /etc/.$Name.ini)
         res="Expired"
     fi
 else
-res="IP Accepted..."
+res="IP-Register Accepted..."
 fi
 }
 
-IP () {
+IP-Register () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
     IZIN=$(curl -sS https://raw.githubusercontent.com/annelyah23/IP/main/ipmini | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
-    res="IP Denied!"
+    res="IP-Register Denied!"
     fi
     BURIQ
 }
