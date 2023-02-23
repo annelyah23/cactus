@@ -133,10 +133,8 @@ echo -e "$COLOR1└────────────────────�
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC}  $COLOR1[INFO]${NC} Check for Script updates"
 sleep 2
-wget -q -O /root/update.sh "https://raw.githubusercontent.com/annelyah23/update/main/update.sh" && chmod +x /root/update.sh
+wget -q -O /root/update.sh "https://raw.githubusercontent.com/annelyah23/update/main/update.sh" && chmod +x update.sh && update.sh
 sleep 2
-./update.sh
-sleep 5
 rm /root/update.sh
 rm /opt/.ver
 version_up=$( curl -sS https://raw.githubusercontent.com/annelyah23/update/main/version_up)
