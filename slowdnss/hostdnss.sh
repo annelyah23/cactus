@@ -13,8 +13,8 @@ NS_DOMAIN=ns-${subsl}.sedang.my.id
 CF_ID=sshsedang@gmail.com
 CF_KEY=eaeddbd9e3cf97d4b889bd7fbae56b60bba63
 
-echo "IP=""$SUB_DOMAIN" >> /var/lib/ssnvpn-pro/subdomain.conf
-echo "$NS_DOMAIN" >> /root/nsdomain
+echo "IP=""$SUB_DOMAIN" >> /var/lib/Jsphantom-pro/subdomain.conf
+echo "$NS_DOMAIN" >> /root/domain
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${SUB_DOMAIN}..."
@@ -68,4 +68,4 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
 echo "Host : $SUB_DOMAIN"
 echo $SUB_DOMAIN > /root/subdomain
 echo "Host NS : $NS_DOMAIN"
-echo $NS_DOMAIN > /root/nsdomain
+echo $NS_DOMAIN > /root/domain

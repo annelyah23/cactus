@@ -1,14 +1,14 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
 
-colornow=$(cat /etc/ssnvpn/theme/color.conf)
+colornow=$(cat /etc/Jsphantom/theme/color.conf)
 NC="\e[0m"
-COLOR1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+COLOR1="$(cat /etc/Jsphantom/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/Jsphantom/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 
-APIGIT=$(cat /etc/ssnvpn/github/api)
-EMAILGIT=$(cat /etc/ssnvpn/github/email)
-USERGIT=$(cat /etc/ssnvpn/github/username)
+APIGIT=$(cat /etc/Jsphantom/github/api)
+EMAILGIT=$(cat /etc/Jsphantom/github/email)
+USERGIT=$(cat /etc/Jsphantom/github/username)
 
 
 function setapi(){
@@ -18,10 +18,10 @@ echo -e "$COLOR1│${NC} ${COLBG1}              • IPVPS GITHUB API •        
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 
-if [[ -f /etc/ssnvpn/github/api && -f /etc/ssnvpn/github/email && /etc/ssnvpn/github/username ]]; then
+if [[ -f /etc/Jsphantom/github/api && -f /etc/Jsphantom/github/email && /etc/Jsphantom/github/username ]]; then
    rec="OK"
 else
-    mkdir /etc/ssnvpn/github > /dev/null 2>&1
+    mkdir /etc/Jsphantom/github > /dev/null 2>&1
 fi
 
 read -p " E-mail   : " EMAIL1
@@ -61,10 +61,10 @@ menu-ip
 fi
 
 sleep 2
-echo "$EMAIL1" > /etc/ssnvpn/github/email
-echo "$USERNAME1" > /etc/ssnvpn/github/username
-echo "$API1" > /etc/ssnvpn/github/api
-echo "ON" > /etc/ssnvpn/github/gitstat
+echo "$EMAIL1" > /etc/Jsphantom/github/email
+echo "$USERNAME1" > /etc/Jsphantom/github/username
+echo "$API1" > /etc/Jsphantom/github/api
+echo "ON" > /etc/Jsphantom/github/gitstat
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
@@ -454,11 +454,11 @@ menu-ip
 }
 function resetipvps(){
 clear
-rm -f /etc/ssnvpn/github/email
-rm -f /etc/ssnvpn/github/username
-rm -f /etc/ssnvpn/github/api
-rm -f /etc/ssnvpn/github/gitstat
-echo "OFF" > /etc/ssnvpn/github/gitstat
+rm -f /etc/Jsphantom/github/email
+rm -f /etc/Jsphantom/github/username
+rm -f /etc/Jsphantom/github/api
+rm -f /etc/Jsphantom/github/gitstat
+echo "OFF" > /etc/Jsphantom/github/gitstat
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}              • RESET GITUB API •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -495,16 +495,16 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC} ${COLBG1}               • REGISTER IPVPS •              ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
-GITREQ=/etc/ssnvpn/github/gitstat
+GITREQ=/etc/Jsphantom/github/gitstat
 if [ -f "$GITREQ" ]; then
     cekk="ok"
 else 
-    mkdir /etc/ssnvpn/github
-    touch /etc/ssnvpn/github/gitstat
-    echo "OFF" > /etc/ssnvpn/github/gitstat
+    mkdir /etc/Jsphantom/github
+    touch /etc/Jsphantom/github/gitstat
+    echo "OFF" > /etc/Jsphantom/github/gitstat
 fi
 
-stst1=$(cat /etc/ssnvpn/github/gitstat)
+stst1=$(cat /etc/Jsphantom/github/gitstat)
 if [ "$stst1" = "OFF" ]; then
 clear
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
@@ -520,7 +520,7 @@ echo -e ""
 read -n 1 -s -r -p "   Press any key to Set API"
 setapi
 fi
-stst=$(cat /etc/ssnvpn/github/gitstat)
+stst=$(cat /etc/Jsphantom/github/gitstat)
 if [ "$stst" = "ON" ]; then
 APIOK="CEK API"
 rex="viewapi"

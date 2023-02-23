@@ -2,11 +2,11 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ###########- COLOR CODE -##############
-colornow=$(cat /etc/ssnvpn/theme/color.conf)
+colornow=$(cat /etc/Jsphantom/theme/color.conf)
 NC="\e[0m"
 RED="\033[0;31m" 
-COLOR1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
+COLOR1="$(cat /etc/Jsphantom/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/Jsphantom/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"                    
 ###########- END COLOR CODE -##########
 
 
@@ -80,7 +80,7 @@ read -p "  Select Options :  " colormenu
 case $colormenu in
 01 | 1)
 clear
-echo "blue" >/etc/ssnvpn/theme/color.conf
+echo "blue" >/etc/Jsphantom/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}                • BLUE THEME •                 ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -95,7 +95,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 02 | 2)
 clear
-echo "red" >/etc/ssnvpn/theme/color.conf
+echo "red" >/etc/Jsphantom/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}                • RED THEME •                  ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -110,7 +110,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 03 | 3)
 clear
-echo "yellow" >/etc/ssnvpn/theme/color.conf
+echo "yellow" >/etc/Jsphantom/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • YELLOW THEME •                ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -125,7 +125,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 04 | 4)
 clear
-echo "cyan" >/etc/ssnvpn/theme/color.conf
+echo "cyan" >/etc/Jsphantom/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}                • CYAN THEME •                 ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -140,7 +140,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 05 | 5)
 clear
-echo "green" >/etc/ssnvpn/theme/color.conf
+echo "green" >/etc/Jsphantom/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • GREEN THEME •                 ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
@@ -155,7 +155,7 @@ echo -e "$COLOR1└────────────────────�
 ;;
 06 | 6)
 clear
-echo "magenta" >/etc/ssnvpn/theme/color.conf
+echo "magenta" >/etc/Jsphantom/theme/color.conf
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
 echo -e "$COLOR1│${NC} ${COLBG1}               • MAGENTA THEME •               ${NC} $COLOR1│$NC"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"

@@ -173,10 +173,10 @@ exit 0
 fi
 sleep 3
 
-mkdir -p /etc/ssnvpn
-mkdir -p /etc/ssnvpn/theme
-mkdir -p /var/lib/ssnvpn-pro >/dev/null 2>&1
-echo "IP=" >> /var/lib/ssnvpn-pro/ipvps.conf
+mkdir -p /etc/Jsphantom
+mkdir -p /etc/Jsphantom/theme
+mkdir -p /var/lib/Jsphantom-pro >/dev/null 2>&1
+echo "IP=" >> /var/lib/Jsphantom-pro/ipvps.conf
 
 if [ -f "/etc/xray/domain" ]; then
 echo ""
@@ -208,40 +208,40 @@ echo "$pp" > /etc/xray/domain
 echo "$pp" > /etc/xray/scdomain
 echo "$pp" > /root/nsdomain
 echo "$pp" > /root/subdomain
-echo "IP=$pp" > /var/lib/ssnvpn-pro/ipvps.conf
+echo "IP=$pp" > /var/lib/Jsphantom-pro/ipvps.conf
 
 #THEME RED
-cat <<EOF>> /etc/ssnvpn/theme/red
+cat <<EOF>> /etc/Jsphantom/theme/red
 BG : \E[40;1;41m
 TEXT : \033[0;31m
 EOF
 #THEME BLUE
-cat <<EOF>> /etc/ssnvpn/theme/blue
+cat <<EOF>> /etc/Jsphantom/theme/blue
 BG : \E[40;1;44m
 TEXT : \033[0;34m
 EOF
 #THEME GREEN
-cat <<EOF>> /etc/ssnvpn/theme/green
+cat <<EOF>> /etc/Jsphantom/theme/green
 BG : \E[40;1;42m
 TEXT : \033[0;32m
 EOF
 #THEME YELLOW
-cat <<EOF>> /etc/ssnvpn/theme/yellow
+cat <<EOF>> /etc/Jsphantom/theme/yellow
 BG : \E[40;1;43m
 TEXT : \033[0;33m
 EOF
 #THEME MAGENTA
-cat <<EOF>> /etc/ssnvpn/theme/magenta
+cat <<EOF>> /etc/Jsphantom/theme/magenta
 BG : \E[40;1;45m
 TEXT : \033[0;0m
 EOF
 #THEME CYAN
-cat <<EOF>> /etc/ssnvpn/theme/cyan
+cat <<EOF>> /etc/Jsphantom/theme/cyan
 BG : \E[40;1;46m
 TEXT : \033[0;36m
 EOF
 #THEME CONFIG
-cat <<EOF>> /etc/ssnvpn/theme/color.conf
+cat <<EOF>> /etc/Jsphantom/theme/color.conf
 blue
 EOF
     

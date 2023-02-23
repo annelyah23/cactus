@@ -1,14 +1,14 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
 
-colornow=$(cat /etc/ssnvpn/theme/color.conf)
+colornow=$(cat /etc/Jsphantom/theme/color.conf)
 NC="\e[0m"
-COLOR1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
-COLBG1="$(cat /etc/ssnvpn/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
+COLOR1="$(cat /etc/Jsphantom/theme/$colornow | grep -w "TEXT" | cut -d: -f2|sed 's/ //g')"
+COLBG1="$(cat /etc/Jsphantom/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 's/ //g')"
 
-APIGIT=$(cat /etc/ssnvpn/github/api)
-EMAILGIT=$(cat /etc/ssnvpn/github/email)
-USERGIT=$(cat /etc/ssnvpn/github/username)
+APIGIT=$(cat /etc/Jsphantom/github/api)
+EMAILGIT=$(cat /etc/Jsphantom/github/email)
+USERGIT=$(cat /etc/Jsphantom/github/username)
 
 export RED='\033[0;31m';
 export GREEN='\033[0;32m';
