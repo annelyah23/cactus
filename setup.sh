@@ -113,7 +113,7 @@ if [ "" = "$PKG_OK" ]; then
   echo -e "[ ${tyblue}NOTES${NC} ] After rebooting"
   sleep 1
   echo -e "[ ${tyblue}NOTES${NC} ] Then run this script again"
-  echo -e "[ ${tyblue}NOTES${NC} ] Notes, Script Mod By NiLphreakz"
+  echo -e "[ ${tyblue}NOTES${NC} ] Notes, Script Mod By JsPhantom"
   echo -e "[ ${tyblue}NOTES${NC} ] if you understand then tap enter now.."
   read
 else
@@ -164,9 +164,9 @@ if [ -f /home/needupdate ]; then
 red "Your script need to update first !"
 exit 0
 elif [ "$res" = "IP Accepted..." ]; then
-green "IP Accepted!"
+green "IP-Register Accepted!"
 else
-red "IP Denied!"
+red "IP-Register Denied!"
 rm setup.sh > /dev/null 2>&1
 sleep 10
 exit 0
@@ -351,7 +351,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Script Mod By NiLphreakz  ]-==============="
+echo "===============-[ Script Mod By JsPhantom  ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
