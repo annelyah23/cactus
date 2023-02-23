@@ -23,7 +23,7 @@ echo "Progress..." | lolcat
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading files... "
 wget -qc https://raw.githubusercontent.com/annelyah23/cactus/main/slowdnss/hostdnss.sh && chmod +x hostdnss.sh &&  sed -i -e 's/\r$//' hostdnss.sh && ./hostdnss.sh
-nameserver=$(cat /root/nsdomain)
+nameserver=$(cat /root/domain)
 echo -e "[ ${green}INFO${NC} ] Download File... "
 echo "Progress..." | lolcat
 # SSH SlowDNS
@@ -70,7 +70,7 @@ sleep 2
 install client-sldns.service
 cat > /etc/systemd/system/client-sldns.service << END
 [Unit]
-Description=Client SlowDNS By Jrtunnel Mwoi
+Description=Client SlowDNS Moded Jsphantom
 Documentation=t.me/
 After=network.target nss-lookup.target
 
@@ -90,7 +90,7 @@ cd
 install server-sldns.service
 cat > /etc/systemd/system/server-sldns.service << END
 [Unit]
-Description=Server SlowDNS By Jrtunnel Mwoi
+Description=Client SlowDNS Moded Jsphantom
 Documentation=t.me/ajikcobain 
 After=network.target nss-lookup.target
 
