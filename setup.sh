@@ -159,11 +159,11 @@ echo -e "[ ${green}INFO${NC} ] Allright good ... installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check IP : "
 
-IP
+IP-Register
 if [ -f /home/needupdate ]; then
 red "Your script need to update first !"
 exit 0
-elif [ "$res" = "IP Accepted..." ]; then
+elif [ "$res" = "IP-Register Accepted..." ]; then
 green "IP-Register Accepted!"
 else
 red "IP-Register Denied!"
@@ -199,7 +199,7 @@ clear
 
 yellow "Add Domain for vmess/vless/trojan dll"
 echo "-------------------------------------"
-echo "     Scipt Mod By NiLphreakz "
+echo "     Scipt Mod By JsPhantom "
 echo "-------------------------------------"
 read -rp "Input your domain : " -e pp
 echo "$pp" > /root/domain
@@ -230,8 +230,8 @@ TEXT : \033[0;33m
 EOF
 #THEME MAGENTA
 cat <<EOF>> /etc/ssnvpn/theme/magenta
-BG : \E[40;1;43m
-TEXT : \033[0;33m
+BG : \E[40;1;45m
+TEXT : \033[0;0m
 EOF
 #THEME CYAN
 cat <<EOF>> /etc/ssnvpn/theme/cyan
